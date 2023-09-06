@@ -1,0 +1,1178 @@
+[
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "139",
+                "y": "90"
+            },
+            "size": {
+                "width": "217",
+                "height": "168"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "14",
+                "y": "113"
+            },
+            "size": {
+                "width": "149",
+                "height": "248"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "179",
+                "y": "51"
+            },
+            "size": {
+                "width": "239",
+                "height": "111"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "8",
+                "y": "59"
+            },
+            "size": {
+                "width": "59",
+                "height": "110"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "150",
+                "y": "117"
+            },
+            "size": {
+                "width": "234",
+                "height": "201"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "15",
+                "y": "13"
+            },
+            "size": {
+                "width": "54",
+                "height": "52"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "31",
+                "y": "69"
+            },
+            "size": {
+                "width": "121",
+                "height": "159"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "90",
+                "y": "190"
+            },
+            "size": {
+                "width": "117",
+                "height": "217"
+            }
+        }
+    },
+    {
+        "id": "5",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "187",
+                "y": "26"
+            },
+            "size": {
+                "width": "212",
+                "height": "51"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "108",
+                "y": "10"
+            },
+            "size": {
+                "width": "196",
+                "height": "98"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "147",
+                "y": "151"
+            },
+            "size": {
+                "width": "227",
+                "height": "231"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "26",
+                "y": "51"
+            },
+            "size": {
+                "width": "153",
+                "height": "178"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "199",
+                "y": "178"
+            },
+            "size": {
+                "width": "239",
+                "height": "218"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "45",
+                "y": "112"
+            },
+            "size": {
+                "width": "155",
+                "height": "222"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "179",
+                "y": "105"
+            },
+            "size": {
+                "width": "224",
+                "height": "150"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "12",
+                "y": "44"
+            },
+            "size": {
+                "width": "61",
+                "height": "93"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "168",
+                "y": "10"
+            },
+            "size": {
+                "width": "247",
+                "height": "89"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "105",
+                "y": "114"
+            },
+            "size": {
+                "width": "140",
+                "height": "149"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "42",
+                "y": "20"
+            },
+            "size": {
+                "width": "109",
+                "height": "87"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "41",
+                "y": "107"
+            },
+            "size": {
+                "width": "169",
+                "height": "235"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "115",
+                "y": "17"
+            },
+            "size": {
+                "width": "252",
+                "height": "154"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "134",
+                "y": "181"
+            },
+            "size": {
+                "width": "178",
+                "height": "225"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "50",
+                "y": "66"
+            },
+            "size": {
+                "width": "106",
+                "height": "122"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "23",
+                "y": "162"
+            },
+            "size": {
+                "width": "72",
+                "height": "211"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "32",
+                "y": "71"
+            },
+            "size": {
+                "width": "177",
+                "height": "216"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "185",
+                "y": "52"
+            },
+            "size": {
+                "width": "233",
+                "height": "100"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "184",
+                "y": "162"
+            },
+            "size": {
+                "width": "247",
+                "height": "225"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "87",
+                "y": "19"
+            },
+            "size": {
+                "width": "122",
+                "height": "54"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "80",
+                "y": "78"
+            },
+            "size": {
+                "width": "149",
+                "height": "147"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "126",
+                "y": "164"
+            },
+            "size": {
+                "width": "193",
+                "height": "231"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "52",
+                "y": "31"
+            },
+            "size": {
+                "width": "96",
+                "height": "75"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "199",
+                "y": "77"
+            },
+            "size": {
+                "width": "250",
+                "height": "128"
+            }
+        }
+    },
+    {
+        "id": "5",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "53",
+                "y": "173"
+            },
+            "size": {
+                "width": "100",
+                "height": "220"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "222",
+                "y": "153"
+            },
+            "size": {
+                "width": "251",
+                "height": "182"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "25",
+                "y": "116"
+            },
+            "size": {
+                "width": "143",
+                "height": "234"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "81",
+                "y": "67"
+            },
+            "size": {
+                "width": "118",
+                "height": "104"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "144",
+                "y": "25"
+            },
+            "size": {
+                "width": "256",
+                "height": "137"
+            }
+        }
+    },
+    {
+        "id": "5",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "44",
+                "y": "70"
+            },
+            "size": {
+                "width": "72",
+                "height": "98"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "147",
+                "y": "162"
+            },
+            "size": {
+                "width": "205",
+                "height": "220"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "148",
+                "y": "7"
+            },
+            "size": {
+                "width": "219",
+                "height": "78"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "11",
+                "y": "81"
+            },
+            "size": {
+                "width": "107",
+                "height": "177"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "90",
+                "y": "20"
+            },
+            "size": {
+                "width": "129",
+                "height": "59"
+            }
+        }
+    },
+    {
+        "id": "5",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "0",
+                "y": "3"
+            },
+            "size": {
+                "width": "43",
+                "height": "46"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "1",
+                "y": "111"
+            },
+            "size": {
+                "width": "81",
+                "height": "191"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "119",
+                "y": "34"
+            },
+            "size": {
+                "width": "243",
+                "height": "158"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "42",
+                "y": "153"
+            },
+            "size": {
+                "width": "143",
+                "height": "254"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "116",
+                "y": "10"
+            },
+            "size": {
+                "width": "171",
+                "height": "65"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "64",
+                "y": "37"
+            },
+            "size": {
+                "width": "91",
+                "height": "64"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "85",
+                "y": "42"
+            },
+            "size": {
+                "width": "156",
+                "height": "113"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "32",
+                "y": "89"
+            },
+            "size": {
+                "width": "108",
+                "height": "165"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "165",
+                "y": "84"
+            },
+            "size": {
+                "width": "248",
+                "height": "167"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "78",
+                "y": "135"
+            },
+            "size": {
+                "width": "192",
+                "height": "249"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "97",
+                "y": "24"
+            },
+            "size": {
+                "width": "127",
+                "height": "54"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "14",
+                "y": "5"
+            },
+            "size": {
+                "width": "64",
+                "height": "55"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "31",
+                "y": "4"
+            },
+            "size": {
+                "width": "166",
+                "height": "139"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "168",
+                "y": "189"
+            },
+            "size": {
+                "width": "196",
+                "height": "217"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "38",
+                "y": "141"
+            },
+            "size": {
+                "width": "86",
+                "height": "189"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "173",
+                "y": "104"
+            },
+            "size": {
+                "width": "256",
+                "height": "187"
+            }
+        }
+    },
+    {
+        "id": "5",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "74",
+                "y": "217"
+            },
+            "size": {
+                "width": "103",
+                "height": "246"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "116",
+                "y": "160"
+            },
+            "size": {
+                "width": "205",
+                "height": "249"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "148",
+                "y": "120"
+            },
+            "size": {
+                "width": "190",
+                "height": "162"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "140",
+                "y": "198"
+            },
+            "size": {
+                "width": "190",
+                "height": "248"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "3",
+                "y": "20"
+            },
+            "size": {
+                "width": "100",
+                "height": "117"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "155",
+                "y": "89"
+            },
+            "size": {
+                "width": "241",
+                "height": "175"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "173",
+                "y": "2"
+            },
+            "size": {
+                "width": "235",
+                "height": "64"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "46",
+                "y": "58"
+            },
+            "size": {
+                "width": "97",
+                "height": "109"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "91",
+                "y": "20"
+            },
+            "size": {
+                "width": "149",
+                "height": "78"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "101",
+                "y": "112"
+            },
+            "size": {
+                "width": "203",
+                "height": "214"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "57",
+                "y": "201"
+            },
+            "size": {
+                "width": "98",
+                "height": "242"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "0",
+                "y": "29"
+            },
+            "size": {
+                "width": "38",
+                "height": "67"
+            }
+        }
+    },
+    {
+        "id": "5",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "219",
+                "y": "200"
+            },
+            "size": {
+                "width": "251",
+                "height": "232"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "44",
+                "y": "96"
+            },
+            "size": {
+                "width": "182",
+                "height": "234"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "3",
+                "y": "140"
+            },
+            "size": {
+                "width": "36",
+                "height": "173"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "142",
+                "y": "186"
+            },
+            "size": {
+                "width": "208",
+                "height": "252"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "128",
+                "y": "40"
+            },
+            "size": {
+                "width": "242",
+                "height": "154"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "13",
+                "y": "1"
+            },
+            "size": {
+                "width": "52",
+                "height": "40"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "79",
+                "y": "58"
+            },
+            "size": {
+                "width": "208",
+                "height": "187"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "42",
+                "y": "192"
+            },
+            "size": {
+                "width": "99",
+                "height": "249"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "87",
+                "y": "65"
+            },
+            "size": {
+                "width": "214",
+                "height": "192"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "113",
+                "y": "3"
+            },
+            "size": {
+                "width": "184",
+                "height": "74"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "118",
+                "y": "3"
+            },
+            "size": {
+                "width": "166",
+                "height": "51"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "135",
+                "y": "179"
+            },
+            "size": {
+                "width": "181",
+                "height": "225"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "106",
+                "y": "6"
+            },
+            "size": {
+                "width": "240",
+                "height": "140"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "32",
+                "y": "15"
+            },
+            "size": {
+                "width": "66",
+                "height": "49"
+            }
+        }
+    }
+]

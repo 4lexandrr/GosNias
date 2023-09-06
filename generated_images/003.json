@@ -1,0 +1,128 @@
+[
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "139",
+                "y": "90"
+            },
+            "size": {
+                "width": "217",
+                "height": "168"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "14",
+                "y": "113"
+            },
+            "size": {
+                "width": "149",
+                "height": "248"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "179",
+                "y": "51"
+            },
+            "size": {
+                "width": "239",
+                "height": "111"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "8",
+                "y": "59"
+            },
+            "size": {
+                "width": "59",
+                "height": "110"
+            }
+        }
+    },
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "150",
+                "y": "117"
+            },
+            "size": {
+                "width": "234",
+                "height": "201"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "15",
+                "y": "13"
+            },
+            "size": {
+                "width": "54",
+                "height": "52"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "31",
+                "y": "69"
+            },
+            "size": {
+                "width": "121",
+                "height": "159"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "90",
+                "y": "190"
+            },
+            "size": {
+                "width": "117",
+                "height": "217"
+            }
+        }
+    },
+    {
+        "id": "5",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "187",
+                "y": "26"
+            },
+            "size": {
+                "width": "212",
+                "height": "51"
+            }
+        }
+    }
+]
