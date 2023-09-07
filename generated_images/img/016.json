@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "137",
+                "y": "27"
+            },
+            "size": {
+                "width": "179",
+                "height": "69"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "102",
+                "y": "109"
+            },
+            "size": {
+                "width": "179",
+                "height": "186"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "89",
+                "y": "19"
+            },
+            "size": {
+                "width": "126",
+                "height": "56"
+            }
+        }
+    }
+]
