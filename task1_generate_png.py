@@ -1,7 +1,7 @@
 import random
 import os
 import json
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageChops
 import math
 
 class RandomShapeGenerator:
@@ -9,21 +9,31 @@ class RandomShapeGenerator:
         self.image_size = image_size
         self.min_size = min_size
         self.max_size = max_size
+        # self.shapes = ['hexagon']
         self.shapes = ['rectangle', 'triangle', 'circle', 'hexagon']
 
     def generate_random_shape(self, existing_shapes):
+        """
+        Эта функция генерирует новую фигуру.
+        existing_shapes: список существующих фигур.
+        """
+
+        # Выбор случайной фигуры из имеющегося набора.
         shape_type = random.choice(self.shapes)
         size = random.randint(self.min_size, self.max_size)
         
-        # Генерируем начальные координаты так, чтобы фигура умещалась в пределах изображения
+        # Генерация параметров фигуры.
         x = random.randint(0, self.image_size[0] - size)
         y = random.randint(0, self.image_size[1] - size)
-        
         color = self.get_figure_color()
-
-        rotation_angle = random.randint(-30, 30)  # Ограничиваем поворот до -30 до 30 градусов
-
-        new_shape = (shape_type, size, (x, y, x + size, y + size), color, rotation_angle)
+        rotation_angle = random.randint(-180, 180)  # Ограничиваем поворот до -30 до 30 градусов.
+        
+        # Кортеж, содержащий параметры новой фигуры.
+        new_shape = (shape_type, 
+                     size,
+                     (x, y, x + size, y + size),
+                     color, 
+                     rotation_angle)
 
         if not self.is_overlapping(new_shape, existing_shapes) and not self.is_outside_image(new_shape):
             return new_shape
@@ -31,11 +41,28 @@ class RandomShapeGenerator:
             return self.generate_random_shape(existing_shapes)
 
     def is_overlapping(self, new_shape, existing_shapes):
+        """
+        Эта функция проверяет, происходит ли наслоение новой фигуры на существующие.
+        new_shape: 
+        existing_shapes: 
+        """
+
         for shape in existing_shapes:
             if self.do_shapes_overlap(new_shape[2], shape[2]):
                 return True
         return False
 
+    def check_image_overlap(self, new_image, old_image):
+        """
+        Эта функция проверяет, происходит ли наложение новой фигуры на существующие.
+        new_image: обновленная фотография c новой фигурой.
+        old_image: фотография предыдущего этапа.
+        """
+        overlap = ImageChops.multiply(new_image.convert('L'), old_image.convert('L'))
+        if overlap.getbbox():
+                return True
+        return False
+    
     def do_shapes_overlap(self, rect1, rect2):
         return not (rect1[2] < rect2[0] or
                     rect1[3] < rect2[1] or
@@ -43,49 +70,83 @@ class RandomShapeGenerator:
                     rect1[1] > rect2[3])
 
     def is_outside_image(self, shape):
+        """
+        Эта функция проверяет, выходит ли фигура за границы изображения.
+        shape: кортеж с параметрами фигуры
+        """
+    
         x1, y1, x2, y2 = shape[2]
         if x1 < 0 or y1 < 0 or x2 > self.image_size[0] or y2 > self.image_size[1]:
             return True
         return False
     
     def get_background_color(self):
+        """
+        Эта функция генерирует случайный цвет для фона.
+        """
         return random.randint(0, 127), random.randint(0, 127), random.randint(0, 127)
 
     def get_figure_color(self):
+        """
+        Эта функция генерирует случайный цвет для фигуры.
+        """
         return random.randint(127, 255), random.randint(127, 255), random.randint(127, 255)
 
     def create_image_with_shapes(self, num_shapes=1):
+        """
+        Эта функция создает изображение с фигурой.
+        num_shapes: количество фигур.
+        """
+
+        # Изображение с фоном и новой фигурой
         img = Image.new('RGB', self.image_size, self.get_background_color())
-        draw = ImageDraw.Draw(img)
-        descriptions = []
-        shapes = []
+
+        # Изображение без фона и с новой фигурой
+        img_without_background = Image.new('RGBA', self.image_size, (0, 0, 0, 0))
+
+        descriptions = [] # Список для описание фигур
+        shapes = [] # Список кортежей фигур
 
         for _ in range(num_shapes):
-            shape = self.generate_random_shape(shapes)
+            # Генерация временного изображения только для текущей фигуры
+            temp_img = Image.new('RGBA', self.image_size, (0, 0, 0, 0))
+            shape_draw = ImageDraw.Draw(temp_img)
+
+            shape = self.generate_random_shape(shapes)  # Генерация случайной фигуры (получаем кортеж параметров)
             shape_type, size, position, color, rotation_angle = shape
             rotated_shape = self.rotate_shape(shape_type, size, position, color, rotation_angle)
 
             if shape_type == 'rectangle':
-                draw.rectangle(rotated_shape[2], fill=rotated_shape[3], outline=rotated_shape[3])
+                shape_draw.rectangle(rotated_shape[2], fill=rotated_shape[3], outline=rotated_shape[3])
                 descriptions.append({'size': size, 'position': position[:2], 'shape_type': 'rectangle'})
             elif shape_type == 'triangle':
                 triangle_points = self.get_triangle_points(rotated_shape[2], rotation_angle)
-                draw.polygon(triangle_points, fill=rotated_shape[3], outline=rotated_shape[3])
+                shape_draw.polygon(triangle_points, fill=rotated_shape[3], outline=rotated_shape[3])
                 descriptions.append({'size': size, 'position': position[:2], 'shape_type': 'triangle'})
             elif shape_type == 'circle':
-                draw.ellipse(rotated_shape[2], fill=rotated_shape[3], outline=rotated_shape[3])
+                shape_draw.ellipse(rotated_shape[2], fill=rotated_shape[3], outline=rotated_shape[3])
                 descriptions.append({'size': size, 'position': position[:2], 'shape_type': 'circle'})
             elif shape_type == 'hexagon':
                 hexagon_points = self.get_hexagon_points(rotated_shape[2], rotation_angle)
-                draw.polygon(hexagon_points, fill=rotated_shape[3], outline=rotated_shape[3])
+                shape_draw.polygon(hexagon_points, fill=rotated_shape[3], outline=rotated_shape[3])
                 descriptions.append({'size': size, 'position': position[:2], 'shape_type': 'hexagon'})
 
-            shapes.append(shape)
+            
+            # Проверка на перечение старых фигур с новой
+            if self.check_image_overlap(temp_img, img_without_background):
+                descriptions.pop()
+                shape = self.generate_random_shape(shapes)
+                continue
+            else:
+                img_without_background.paste(temp_img, (0, 0), temp_img)
+                img.paste(img_without_background, (0, 0), img_without_background)
+                shapes.append(shape)
 
-        # img.show()
+
         return descriptions, img
 
     def rotate_shape(self, shape_type, size, position, color, rotation_angle):
+        shape = (shape_type, size, position, color)
         shape_img = Image.new('RGBA', (size, size))
         draw = ImageDraw.Draw(shape_img)
 
@@ -129,10 +190,16 @@ class RandomShapeGenerator:
 
         rotated_shape_img = shape_img.rotate(rotation_angle, expand=True)
         bbox = rotated_shape_img.getbbox()
-        rotated_shape = (shape_type, bbox[2] - bbox[0], (position[0] + bbox[0], position[1] + bbox[1], position[0] + bbox[2], position[1] + bbox[3]), color)
 
-        return rotated_shape
-
+        if self.is_outside_image([None, None, bbox]):
+            shape = (shape_type, 
+                     bbox[2] - bbox[0], 
+                     (position[0] + bbox[0], position[1] + bbox[1], position[0] + bbox[2], position[1] + bbox[3]), 
+                     color)
+            print('Nice')
+            
+        return shape 
+        
     def get_triangle_points(self, rect, rotation_angle):
         half_width = (rect[2] - rect[0]) / 2
         half_height = (rect[3] - rect[1]) / 2
@@ -183,13 +250,14 @@ class RandomShapeGenerator:
 
 if __name__ == '__main__':
     output_dir = 'generated_images'
+    output_dir_annot = 'generated_images'
     os.makedirs(output_dir, exist_ok=True)
     generator = RandomShapeGenerator()
 
     # Список для хранения описаний фигур
     shape_descriptions = []
 
-    for i in range(100):
+    for i in range(1):
         num_shapes = random.randint(1, 5)
         descriptions, img = generator.create_image_with_shapes(num_shapes)
 
@@ -197,7 +265,7 @@ if __name__ == '__main__':
         img.save(img_filename)
 
         # Создаем описание фигур для текущей фотографии
-        image_shapes = []
+        shape_descriptions = []
         for j, figure_desc in enumerate(descriptions):
             shape_type = figure_desc['shape_type']  # Извлекаем тип фигуры (название)
             region_info = figure_desc['position']
@@ -216,6 +284,6 @@ if __name__ == '__main__':
             shape_descriptions.append(shape_info)
 
         # Сохраняем описания фигур в JSON файл
-        json_filename = os.path.join(output_dir, f"{i + 1:03}.json")
+        json_filename = os.path.join(output_dir_annot, f"{i + 1:03}.json")
         with open(json_filename, "w") as json_file:
             json.dump(shape_descriptions, json_file, indent=4)

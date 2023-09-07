@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "116",
+                "y": "29"
+            },
+            "size": {
+                "width": "143",
+                "height": "56"
+            }
+        }
+    }
+]

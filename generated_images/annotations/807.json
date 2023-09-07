@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "112",
+                "y": "2"
+            },
+            "size": {
+                "width": "244",
+                "height": "134"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "59",
+                "y": "146"
+            },
+            "size": {
+                "width": "117",
+                "height": "204"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "23",
+                "y": "52"
+            },
+            "size": {
+                "width": "98",
+                "height": "127"
+            }
+        }
+    }
+]

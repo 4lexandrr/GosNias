@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "94",
+                "y": "80"
+            },
+            "size": {
+                "width": "204",
+                "height": "190"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "4",
+                "y": "11"
+            },
+            "size": {
+                "width": "41",
+                "height": "48"
+            }
+        }
+    }
+]

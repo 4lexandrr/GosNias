@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "134",
+                "y": "150"
+            },
+            "size": {
+                "width": "227",
+                "height": "243"
+            }
+        }
+    }
+]

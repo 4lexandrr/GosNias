@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "57",
+                "y": "172"
+            },
+            "size": {
+                "width": "113",
+                "height": "228"
+            }
+        }
+    }
+]
