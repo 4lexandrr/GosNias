@@ -9,7 +9,6 @@ class RandomShapeGenerator:
         self.image_size = image_size
         self.min_size = min_size
         self.max_size = max_size
-        # self.shapes = ['hexagon']
         self.shapes = ['rectangle', 'triangle', 'circle', 'hexagon']
 
     def generate_random_shape(self, existing_shapes):
@@ -146,6 +145,14 @@ class RandomShapeGenerator:
         return descriptions, img
 
     def rotate_shape(self, shape_type, size, position, color, rotation_angle):
+        """
+        Эта функция возвращает перевернутую фигуру.
+        shape_type: тип фигуры.
+        size: размер фигуры.
+        position: начальные координаты.
+        color: цвет.
+        rotation_angle: угол вращения.
+        """
         shape = (shape_type, size, position, color)
         shape_img = Image.new('RGBA', (size, size))
         draw = ImageDraw.Draw(shape_img)
@@ -201,6 +208,11 @@ class RandomShapeGenerator:
         return shape 
         
     def get_triangle_points(self, rect, rotation_angle):
+        """
+        Эта функция возвращает перевернутые точки треугольника.
+        rect: размеры фигуры.
+        rotation_angle: заданный угол вращения.
+        """
         half_width = (rect[2] - rect[0]) / 2
         half_height = (rect[3] - rect[1]) / 2
         center_x = rect[0] + half_width
@@ -225,6 +237,11 @@ class RandomShapeGenerator:
         return rotated_points
 
     def get_hexagon_points(self, rect, rotation_angle):
+        """
+        Эта функция возвращает перевернутые точки гексагона.
+        rect: размеры фигуры.
+        rotation_angle: заданный угол вращения.
+        """
         half_width = (rect[2] - rect[0]) / 2
         half_height = (rect[3] - rect[1]) / 2
         center_x = rect[0] + half_width
@@ -249,15 +266,15 @@ class RandomShapeGenerator:
         return rotated_points
 
 if __name__ == '__main__':
-    output_dir = 'generated_images'
-    output_dir_annot = 'generated_images'
+    output_dir = 'generated_images/img'
+    output_dir_annot = 'generated_images/annotations'
     os.makedirs(output_dir, exist_ok=True)
     generator = RandomShapeGenerator()
 
     # Список для хранения описаний фигур
     shape_descriptions = []
 
-    for i in range(1):
+    for i in range(100):
         num_shapes = random.randint(1, 5)
         descriptions, img = generator.create_image_with_shapes(num_shapes)
 
@@ -284,6 +301,6 @@ if __name__ == '__main__':
             shape_descriptions.append(shape_info)
 
         # Сохраняем описания фигур в JSON файл
-        json_filename = os.path.join(output_dir_annot, f"{i + 1:03}.json")
+        json_filename = os.path.join(output_dir, f"{i + 1:03}.json")
         with open(json_filename, "w") as json_file:
             json.dump(shape_descriptions, json_file, indent=4)
