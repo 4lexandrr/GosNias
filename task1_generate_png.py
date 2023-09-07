@@ -266,7 +266,7 @@ class RandomShapeGenerator:
         return rotated_points
 
 if __name__ == '__main__':
-    output_dir = 'generated_images/img'
+    output_dir = 'generated_images/images'
     output_dir_annot = 'generated_images/annotations'
     os.makedirs(output_dir, exist_ok=True)
     generator = RandomShapeGenerator()
@@ -301,6 +301,6 @@ if __name__ == '__main__':
             shape_descriptions.append(shape_info)
 
         # Сохраняем описания фигур в JSON файл
-        json_filename = os.path.join(output_dir, f"{i + 1:03}.json")
+        json_filename = os.path.join(output_dir_annot, f"{i + 1:03}.json")
         with open(json_filename, "w") as json_file:
             json.dump(shape_descriptions, json_file, indent=4)

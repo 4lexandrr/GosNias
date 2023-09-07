@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "177",
+                "y": "115"
+            },
+            "size": {
+                "width": "234",
+                "height": "172"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "circle",
+        "region": {
+            "origin": {
+                "x": "21",
+                "y": "5"
+            },
+            "size": {
+                "width": "156",
+                "height": "140"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "188",
+                "y": "54"
+            },
+            "size": {
+                "width": "215",
+                "height": "81"
+            }
+        }
+    },
+    {
+        "id": "4",
+        "name": "triangle",
+        "region": {
+            "origin": {
+                "x": "11",
+                "y": "162"
+            },
+            "size": {
+                "width": "57",
+                "height": "208"
+            }
+        }
+    }
+]

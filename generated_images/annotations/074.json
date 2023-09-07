@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "194",
+                "y": "89"
+            },
+            "size": {
+                "width": "251",
+                "height": "146"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "name": "hexagon",
+        "region": {
+            "origin": {
+                "x": "31",
+                "y": "105"
+            },
+            "size": {
+                "width": "129",
+                "height": "203"
+            }
+        }
+    },
+    {
+        "id": "3",
+        "name": "rectangle",
+        "region": {
+            "origin": {
+                "x": "134",
+                "y": "97"
+            },
+            "size": {
+                "width": "161",
+                "height": "124"
+            }
+        }
+    }
+]
