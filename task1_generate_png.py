@@ -9,6 +9,7 @@ class RandomShapeGenerator:
         self.image_size = image_size
         self.min_size = min_size
         self.max_size = max_size
+        # self.shapes = ['hexagon']
         self.shapes = ['rectangle', 'triangle', 'circle', 'hexagon']
 
     def generate_random_shape(self, existing_shapes):
@@ -22,15 +23,18 @@ class RandomShapeGenerator:
         size = random.randint(self.min_size, self.max_size)
         
         # Генерация параметров фигуры.
-        x = random.randint(0, self.image_size[0] - size)
-        y = random.randint(0, self.image_size[1] - size)
+        half_size = size // 2
+        x = random.randint(half_size, self.image_size[0] - half_size)
+        y = random.randint(half_size, self.image_size[1] - half_size)
+        position = (x - half_size, y - half_size, x + half_size, y + half_size)
+
         color = self.get_figure_color()
-        rotation_angle = random.randint(-180, 180)  # Ограничиваем поворот до -30 до 30 градусов.
+        rotation_angle = random.randint(-179, 179)  # Ограничиваем поворот до -30 до 30 градусов.
         
         # Кортеж, содержащий параметры новой фигуры.
         new_shape = (shape_type, 
                      size,
-                     (x, y, x + size, y + size),
+                     position,
                      color, 
                      rotation_angle)
 
@@ -266,15 +270,15 @@ class RandomShapeGenerator:
         return rotated_points
 
 if __name__ == '__main__':
-    output_dir = 'generated_images/images'
-    output_dir_annot = 'generated_images/annotations'
+    output_dir = 'generated_images'
+    output_dir_annot = 'generated_images'
     os.makedirs(output_dir, exist_ok=True)
     generator = RandomShapeGenerator()
 
     # Список для хранения описаний фигур
     shape_descriptions = []
 
-    for i in range(100):
+    for i in range(1):
         num_shapes = random.randint(1, 5)
         descriptions, img = generator.create_image_with_shapes(num_shapes)
 
@@ -301,6 +305,6 @@ if __name__ == '__main__':
             shape_descriptions.append(shape_info)
 
         # Сохраняем описания фигур в JSON файл
-        json_filename = os.path.join(output_dir_annot, f"{i + 1:03}.json")
+        json_filename = os.path.join(output_dir, f"{i + 1:03}.json")
         with open(json_filename, "w") as json_file:
             json.dump(shape_descriptions, json_file, indent=4)
