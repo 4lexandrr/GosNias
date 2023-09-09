@@ -25,6 +25,10 @@ class Dataset(torch.utils.data.Dataset):
         return len(self.image_files)
 
     def __getitem__(self, idx):
+        """
+        Эта функция получает каждый объект на изображении по индексу.
+        idx: индекс объекта.
+        """
         img_path = os.path.join(self.data_dir, "images", self.image_files[idx])
         ann_path = os.path.join(self.data_dir, "annot", self.annotation_files[idx])
         
@@ -52,6 +56,7 @@ class Dataset(torch.utils.data.Dataset):
         return image, (torch.tensor(label_idx, dtype=torch.int64), torch.tensor(bbox, dtype=torch.float32))
 
 class SimpleDetector(nn.Module):
+    """ Класс нейронной сети """
     def __init__(self, num_clusses=4):
         super(SimpleDetector, self).__init__()
         
@@ -81,6 +86,7 @@ class CombinedLoss(nn.Module):
 
 
 def train_model(model, dataloader, criterion, optimizer, num_epochs=10):
+    """ Обучение модели """
     loss_history = []
 
     for epoch in range(num_epochs):
@@ -97,13 +103,14 @@ def train_model(model, dataloader, criterion, optimizer, num_epochs=10):
             
             if batch_idx % 10 == 0:
                 print(f"Epoch {epoch}/{num_epochs}, Batch {batch_idx}/{len(dataloader)}, Loss: {loss.item()}")
-        scheduler.step()
-
-    torch.save(model.state_dict(), 'simple_detector.pth')
+        
+        if epoch == 4:
+            torch.save(model.state_dict(), 'intermediate_checkpoint.pth')
 
     return loss_history
 
 def test_image(model, image_path, transform):
+    """ Тестирование модели """
     model.eval()  # переключаем модель в режим предсказания
 
     image = Image.open(image_path)
@@ -119,20 +126,88 @@ def test_image(model, image_path, transform):
     print("Predicted class:", label_map[predicted_class])
     print("Predicted bbox:", predicted_bbox)
 
+def calculate_iou(box1, box2):
+
+    x1, y1, x2, y2 = box1
+    x1_, y1_, x2_, y2_ = box2
+    
+    inter_x1 = max(x1, x1_)
+    inter_y1 = max(y1, y1_)
+    inter_x2 = min(x2, x2_)
+    inter_y2 = min(y2, y2_)
+
+    inter_area = max(inter_x2 - inter_x1, 0) * max(inter_y2 - inter_y1, 0)
+    
+    box1_area = (x2 - x1) * (y2 - y1)
+    box2_area = (x2_ - x1_) * (y2_ - y1_)
+
+    union_area = box1_area + box2_area - inter_area
+    
+    iou = inter_area / union_area
+
+    return iou
+
+def evaluate_model(model, dataloader, checkpoint_path):
+    model.load_state_dict(torch.load(checkpoint_path))
+    model.eval()
+
+    ious = []
+    tp = 0
+    fp = 0
+    fn = 0
+
+    with torch.no_grad():
+        for inputs, (labels, bboxes) in dataloader:
+            class_preds, bbox_preds = model(inputs)
+            for i in range(inputs.size(0)):
+                predicted_bbox = bbox_preds[i]
+                true_bbox = bboxes[i]
+                
+                iou = calculate_iou(predicted_bbox, true_bbox) # передаем два bbox в функцию
+                ious.append(iou)
+                    
+                predicted_class = class_preds[i].argmax(dim=0).item()  # убедимся, что используем индексированный класс
+                true_class = labels[i].item()  # аналогично, используем индексированный label
+                
+                if iou > 0.5:
+                    if predicted_class == true_class:
+                        tp += 1
+                    else:
+                        fp += 1
+                else:
+                    fn += 1
+
+    max_iou = max(ious)
+    min_iou = min(ious)
+    avg_iou = sum(ious) / len(ious)
+    
+    precision = tp / (tp + fp)
+    recall = tp / (tp + fn)
+    
+    return max_iou, min_iou, avg_iou, precision, recall
 
 if __name__ == "__main__":
     # Определение трансформаций и загрузчика данных
-    transform= transforms.Compose([transforms.ToTensor(),
+    transform = transforms.Compose([transforms.ToTensor(),
                                    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
     dataset = Dataset("generated_images", transform=transform)
-    dataloader = DataLoader(dataset, batch_size=16, shuffle=True)
+    dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
     # Инициализация модели, функции потерь и оптимизатора
     model = SimpleDetector()
     criterion = CombinedLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.0005)
-    scheduler = StepLR(optimizer, step_size=5, gamma=0.1)
+
+    max_iou1, min_iou1, avg_iou1, precision1, recall1 = evaluate_model(model, dataloader, 'intermediate_checkpoint.pth')
+    max_iou2, min_iou2, avg_iou2, precision2, recall2 = evaluate_model(model, dataloader, 'simple_detector.pth')
+
+    print("Intermediate Checkpoint:")
+    print(f"Max IoU: {max_iou1}, Min IoU: {min_iou1}, Avg IoU: {avg_iou1}, Precision: {precision1}, Recall: {recall1}")
+
+    print("Final Checkpoint:")
+    print(f"Max IoU: {max_iou2}, Min IoU: {min_iou2}, Avg IoU: {avg_iou2}, Precision: {precision2}, Recall: {recall2}")
+
 
     # Обучение модели
     loss_history = train_model(model, dataloader, criterion, optimizer)
